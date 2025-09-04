@@ -14,7 +14,11 @@ const loadWord =(wordnum)=>{
         displayWord(json.data)
     })
 }
-
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
 
 const removeActiveBtn=()=>{
     const lessonButton = document.querySelectorAll(".btnLessonCls")
@@ -43,16 +47,16 @@ const displayWord = (words)=>{
         const cardection = document.createElement('div');
         
         cardection.innerHTML=`
-        <div class="bg-white rounded-md shadow-sm text-center py-14 px-13 space-y-5 mt-auto h-full">
+        <div class="bg-white rounded-md shadow-sm text-center py-14 px-13 space-y-5 h-full flex flex-col">
         <h1 class="text-[30px] font-bold">${element.word ? element.word:"Word Not found"}</h1>
         <p class="text-[22px] font-semibold">Meaning/ Pronounciation</p>
         <div class="text-[35px] ">
           "${element.meaning? element.meaning:"meaning not found"} / ${element.pronunciation}"
         </div>
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between gap-4 mt-auto">
           <button onclick="displayModal(${element.id})" class="btn bg-[#1A91FF2A]"><i class="fa-solid fa-circle-info"></i></button>
           
-          <button class="btn bg-[#1A91FF2A]"><i class="fa-solid fa-volume-high "></i></button>
+          <button  onclick="pronounceWord('${element.word}')" class="btn bg-[#1A91FF2A]"><i class="fa-solid fa-volume-high "></i></button>
         </div>
       </div>
         `
