@@ -58,7 +58,7 @@
     </header>
     <!-- english is easy section  -->
     <section
-      class="flex flex-col-reverse md:grid grid-cols-2 justify-between items-center  p-12"
+      class="flex flex-col-reverse md:grid grid-cols-2 justify-between items-center p-12"
     >
       <div>
         <h1 class="text-[40px] font-semibold">
@@ -74,20 +74,65 @@
 
           <input type="password" class="input mt-3" placeholder="Password" />
 
-          <button class="btn btn-neutral mt-4 bg-[#422AD5] w-2/5">Get Started</button>
+          <button class="btn btn-neutral mt-4 bg-[#422AD5] w-2/5">
+            Get Started
+          </button>
         </fieldset>
       </div>
-      <div class=" flex justify-end">
-        <img  src="./assets/hero-student.png" alt="" />
+      <div class="flex justify-end">
+        <img src="./assets/hero-student.png" alt="" />
       </div>
     </section>
 
     <!-- lets learn vocabularies  -->
-     <section class="p-20 items-center text-center"  >
-        <h2 class="text-[40px] font-bold"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h2>
-        <div id="lesson-container" class="flex gap-5 flex-wrap justify-center mt-10"></div>
+    <section class="p-20 items-center text-center">
+      <h2 class="text-[40px] font-bold">
+        <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+      </h2>
+      <div
+        id="lesson-container"
+        class="flex gap-5 flex-wrap justify-center mt-10"
+      ></div>
     </section>
 
-     <script src="./script/index.js"></script>
+    <section class="flex justify-center mb-10">
+      <div class="join">
+        <div>
+          <label class="input validator join-item">
+            
+            <input id="input-search" type="text" placeholder="Enter Word" required />
+          </label>
+          <div class="validator-hint hidden">Enter valid word</div>
+        </div>
+        <button id="btn-search" class="btn btn-primary join-item">Search</button>
+      </div>
+    </section>
+
+    <section
+      id="load-Spinner"
+      class="flex justify-center items-center py-10 hidden"
+    >
+      <span class="loading loading-spinner text-accent"></span>
+    </section>
+    <!-- lesson selection  -->
+    <section
+      id="all-words"
+      class="bg-gray-200 p-12 md:w-11/12 mx-auto rounded-sm grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+    >
+      <div class="text-center col-span-full py-10 space-y-4">
+        <p class="fontBangla text-xl opacity-70">
+          আপনি কোনো লেসন সিলেক্ট করেননি
+        </p>
+        <p class="fontBangla font-semibold text-5xl">
+          একটি Lesson Select করুন।
+        </p>
+      </div>
+    </section>
+
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+      <div id="my_modal_new"></div>
+    </dialog>
+
+    <script src="./script/index.js"></script>
   </body>
 </html>

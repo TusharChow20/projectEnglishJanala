@@ -4,3 +4,7 @@
 .fontBangla{
     font-family: "Hind Siliguri", sans-serif;
 }
+.activeCls{
+    background-color: rgb(68, 68, 236);
+    color: white;
+}
